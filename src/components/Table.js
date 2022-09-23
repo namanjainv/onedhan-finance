@@ -5,7 +5,7 @@ export default function App({columns, data}) {
     console.log(row);
     return (
       <tr>
-        { columns.map(colRecord => <td className={colRecord.className}>{row[colRecord.name]}</td> ) }
+        { columns.map(colRecord => <td className={colRecord.className}>{ colRecord.displayFormat ? colRecord.displayFormat(row[colRecord.name]) : row[colRecord.name]}</td> ) }
       </tr>
     
     )

@@ -54,10 +54,17 @@ function App() {
             });
     }
     return (
+        <>
         <div className="login">
-            <button onClick={googleSignIn}>Google</button>
-            <button onClick={msftSignIn}>Microsoft</button>
+            <p class="fs-3">Join us today</p>
+            <p class="fs-6">Sign In using</p>
+            <button type="button" onClick={msftSignIn} class="btn btn-outline-primary">Microsoft</button>
+            <button type="button" onClick={googleSignIn} class="btn btn-outline-success">Google</button>
+            
         </div>
+        
+        <p class="fs-6">Microsoft Hackathon 2022</p>
+        </>
     );
 }
 

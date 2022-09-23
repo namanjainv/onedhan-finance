@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { MDBDatatable } from 'mdb-react-ui-kit';
 
 export default function App({columns, data}) {
   const TableRow = ({columns, row}) => {
     console.log(row);
     return (
       <tr>
-        { columns.map(colName => <td>{row[colName]}</td> ) }
+        { columns.map(colRecord => <td className={colRecord.className}>{row[colRecord.name]}</td> ) }
       </tr>
     
     )
@@ -16,7 +15,7 @@ export default function App({columns, data}) {
     <table className="table table-striped table-dark">
       <thead>
         <tr>
-          { columns.map(colName => <th scope="col">{colName}</th> ) }
+          { columns.map(colRecord => <th scope="col">{colRecord.displayName}</th> ) }
         </tr>
       </thead>
       <tbody>

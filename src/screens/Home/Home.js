@@ -516,8 +516,26 @@ function App() {
           "market": "NASDAQ"
         }
     ];
+
+    const cols = [
+        {
+            name: 'name',
+            displayName: 'Name',
+            className: 'Table-lText'
+        },
+        {
+            name: 'code',
+            displayName: 'Code',
+            className: 'Table-center '
+        },
+        {
+            name: 'market',
+            displayName: 'Market',
+            className: 'Table-center '
+        }
+    ]
     return (
-        <Table columns={c} data={d} />
+        <Table columns={cols} data={d} />
     );
 }
 

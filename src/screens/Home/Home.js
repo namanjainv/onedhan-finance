@@ -56,15 +56,26 @@ function App() {
         },
         {
             name: 'last_value',
-            displayName: '-1 day Value',
+            displayName: '% Change',
             className: 'Table-center ',
-            type: 'numeric'
+            type: 'numeric',
+            displayFormat: (record) => {
+                const oldValue = record.last_value;
+                const newValue = record.value;
+                const changePct = ( (newValue/oldValue) - 1 ) * 100;
+                const changePctText = changePct.toPrecision(2) + "%";
+            
+                return <p class={changePct > 0 ? "text-success" : "text-danger"}>{changePctText}</p>
+                 
+            },
+            sortBy: 'function'
         },
         {
             name: 'score',
             displayName: 'Prediction',
             className: 'Table-center ',
-            displayFormat: (value) => {
+            displayFormat: (record) => {
+                const value = record.score
                 if(value <= 0.20) {
                     return 'Strongly Sell'
                 }
@@ -87,7 +98,8 @@ function App() {
             name: 'posted_on',
             displayName: 'Date',
             className: 'Table-center ',
-            displayFormat: (value) => {
+            displayFormat: (record) => {
+                const value = record.posted_on;
                 return value.substring(0, 10);
             },
             type: 'date'

@@ -7,7 +7,7 @@ export default function App({columns, data}) {
   const TableRow = ({columns, row}) => {
     return (
       <tr>
-        { columns.map(colRecord => <td key={row[colRecord.name]} className={colRecord.className}>{ colRecord.displayFormat ? colRecord.displayFormat(row[colRecord.name]) : row[colRecord.name]}</td> ) }
+        { columns.map(colRecord => <td key={row[colRecord.name]} className={colRecord.className}>{ colRecord.displayFormat ? colRecord.displayFormat(row) : row[colRecord.name]}</td> ) }
       </tr>
     
     )
@@ -20,8 +20,8 @@ export default function App({columns, data}) {
 
   const sortedData = filteredData.sort((a,b) => {
     const targetColumn = columns[sortColumn];
-    const aText = a[targetColumn.name];
-    const bText = b[targetColumn.name];
+    const aText = targetColumn.sortBy ? targetColumn.displayFormat(a) : a[targetColumn.name];
+    const bText = targetColumn.sortBy ? targetColumn.displayFormat(b) : b[targetColumn.name];
     switch(targetColumn.type) {
       case "numeric": {
         if(sortAscending) return aText-bText;

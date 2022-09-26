@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/onedhan-finance/static/css/main.19395a93.css",
-    "main.js": "/onedhan-finance/static/js/main.3c1315c6.js",
+    "main.css": "/onedhan-finance/static/css/main.f0a164ec.css",
+    "main.js": "/onedhan-finance/static/js/main.1c88ae34.js",
     "static/js/787.7b1e62b4.chunk.js": "/onedhan-finance/static/js/787.7b1e62b4.chunk.js",
     "index.html": "/onedhan-finance/index.html",
-    "main.19395a93.css.map": "/onedhan-finance/static/css/main.19395a93.css.map",
-    "main.3c1315c6.js.map": "/onedhan-finance/static/js/main.3c1315c6.js.map",
+    "main.f0a164ec.css.map": "/onedhan-finance/static/css/main.f0a164ec.css.map",
+    "main.1c88ae34.js.map": "/onedhan-finance/static/js/main.1c88ae34.js.map",
     "787.7b1e62b4.chunk.js.map": "/onedhan-finance/static/js/787.7b1e62b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19395a93.css",
-    "static/js/main.3c1315c6.js"
+    "static/css/main.f0a164ec.css",
+    "static/js/main.1c88ae34.js"
   ]
 }

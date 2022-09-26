@@ -14,7 +14,7 @@ export default function App({columns, data}) {
   }
 
   const filteredData = data.filter(record => {
-    let flags = columns.map(colRecord => record[colRecord.name].includes(searchText));
+    let flags = columns.map(colRecord => record[colRecord.name]?.includes(searchText));
     return flags.includes(true);
   });
 

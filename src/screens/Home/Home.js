@@ -62,10 +62,16 @@ function App() {
             displayFormat: (record) => {
                 const oldValue = record.last_value;
                 const newValue = record.value;
-                const changePct = ( (newValue/oldValue) - 1 ) * 100;
-                const changePctText = changePct.toPrecision(2) + "%";
-            
-                return <p class={changePct > 0 ? "text-success" : "text-danger"}>{changePctText}</p>
+                if(oldValue) {
+
+                    const changePct = ( (newValue/oldValue) - 1 ) * 100;
+                    const changePctText = changePct.toPrecision(2) + "%";
+                
+                    return <p class={changePct > 0 ? "text-success" : "text-danger"}>{changePctText}</p>
+                }
+                else {
+                    return <></>
+                }
                  
             },
             sortBy: 'function'
